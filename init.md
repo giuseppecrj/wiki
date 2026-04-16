@@ -109,6 +109,7 @@ All operations are handled by the `/wiki` skill:
 | `/wiki query [question]` | Answer a question from the wiki with citations |
 | `/wiki health` | Audit: broken links, contradictions, orphans, gaps |
 | `/wiki synthesize` | Surface unnamed patterns across recent sources |
+| `/wiki autoresearch [question]` | Deep research via parallel-exploration subagents |
 | `/wiki challenge [idea]` | Red-team an idea against wiki history |
 | `/wiki daily` | Create or update today's daily note |
 | `/wiki save` | Save conversation insights to the wiki |

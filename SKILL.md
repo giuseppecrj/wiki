@@ -12,6 +12,7 @@ Typical triggers:
 - "what do we know about", "query", "search the wiki" — knowledge retrieval
 - "wiki health", "audit", "broken links" — maintenance
 - "synthesize", "patterns", "what's emerging" — pattern detection
+- "autoresearch", "deep research", "research this" — parallel-exploration research on a specific question
 - "daily note", "today" — daily notes
 - "challenge", "red-team", "pressure-test" — idea testing
 - "start a wiki", "init", "bootstrap" — new wiki setup
@@ -90,6 +91,7 @@ When the user asks for one of these operations, read the referenced file and exe
 | Audit wiki health | Read `health.md`, then execute |
 | Reconcile contradictions | Read `health.md`, then execute the reconcile workflow |
 | Synthesize patterns | Read `synthesize.md`, then execute |
+| Autoresearch a specific question via parallel exploration | Read `autoresearch.md`, then execute |
 | Challenge an idea against wiki history | Read `challenge.md`, then execute |
 | Create or update today's daily note | Read `daily.md`, then execute |
 
