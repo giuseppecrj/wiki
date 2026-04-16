@@ -22,6 +22,8 @@ Both install the skill to `~/.claude/skills/wiki/`. Verify with:
 ls ~/.claude/skills/wiki/SKILL.md
 ```
 
+If you also have a project-local copy at `.agents/skills/wiki/`, Claude Code will use the project-local version. Global install is the default; project-local overrides it.
+
 ## Quick start
 
 Open your vault (or any empty directory) in Claude Code and run:
@@ -165,7 +167,7 @@ If a tool isn't available, the skill skips that step silently. No configuration 
 ## Requirements
 
 - [Claude Code](https://claude.ai/code) (any version with skill support)
-- An Obsidian vault or any directory where you want markdown files
+- An Obsidian vault or any directory where you want markdown files. The skill uses `[[wikilinks]]` for cross-referencing, which Obsidian resolves natively. Other markdown editors that support wikilinks will also work; editors without wikilink support will show the raw syntax but the wiki remains fully functional.
 
 ## License
 

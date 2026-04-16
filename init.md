@@ -67,24 +67,22 @@ A personal knowledge wiki for [user] — a persistent, compounding knowledge bas
 
 ## Directory structure
 
-\```
-/
-├── CLAUDE.md              ← wiki schema (this file)
-├── SOUL.md                ← identity, values, thinking style, voice
-├── CRITICAL_FACTS.md      ← always-needed context
-├── PINNED.md              ← session context pinning (optional)
-├── index.md               ← content index, updated on every operation
-├── log.md                 ← append-only chronological log
-├── raw/                   ← source documents (deleted after ingest)
-│   └── assets/            ← locally downloaded images and files
-└── wiki/                  ← all LLM-generated pages
-    ├── overview.md        ← high-level synthesis
-    ├── sources/           ← one page per ingested source
-    ├── topics/            ← hub pages for major topic areas
-    ├── entities/          ← people, companies, products, projects
-    ├── concepts/          ← ideas, frameworks, themes
-    └── daily/             ← daily notes
-\```
+    /
+    ├── CLAUDE.md              ← wiki schema (this file)
+    ├── SOUL.md                ← identity, values, thinking style, voice
+    ├── CRITICAL_FACTS.md      ← always-needed context
+    ├── PINNED.md              ← session context pinning (optional)
+    ├── index.md               ← content index, updated on every operation
+    ├── log.md                 ← append-only chronological log
+    ├── raw/                   ← source documents (deleted after ingest)
+    │   └── assets/            ← locally downloaded images and files
+    └── wiki/                  ← all LLM-generated pages
+        ├── overview.md        ← high-level synthesis
+        ├── sources/           ← one page per ingested source
+        ├── topics/            ← hub pages for major topic areas
+        ├── entities/          ← people, companies, products, projects
+        ├── concepts/          ← ideas, frameworks, themes
+        └── daily/             ← daily notes
 
 **Rules:**
 - `raw/` is an inbox. Add files here; the agent deletes them after ingest.

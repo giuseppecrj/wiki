@@ -144,6 +144,14 @@ Create an entity page when:
 - The entity is central to a single important source
 - The user explicitly asks about it
 
+## Decision capture
+
+When the user makes a decision — chooses one approach over another, forms an opinion, changes their mind — capture it in a `## Decisions` section on the relevant entity or concept page.
+
+Each entry includes the date, what was decided, what alternatives were considered, and why. Treat this section as **append-only**: add new entries at the top, never rewrite or remove earlier entries. The reasoning trail is the point — the wiki captures judgment, not just conclusions.
+
+See `ingest.md` (save conversation insights) for the full capture protocol.
+
 ## Bi-temporal fact tracking
 
 When a fact changes over time, track both when it was true and when the wiki learned it, using the `## History` section on entity and concept pages.

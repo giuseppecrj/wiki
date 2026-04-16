@@ -24,7 +24,7 @@ The human curates sources and directs exploration. The agent does all writing, c
 Before any operation except `init`, verify the wiki is initialized:
 
 1. Check if `index.md` exists in the working directory.
-2. If it does not exist, tell the user: *"This directory doesn't have a wiki yet. Run `/wiki init` to set one up."* Then stop.
+2. If it does not exist, check if `SOUL.md` exists. If neither exists, tell the user: *"This directory doesn't have a wiki yet. Run `/wiki init` to set one up."* Then stop.
 
 This prevents silent failures for new users who install the skill and try to ingest before bootstrapping.
 

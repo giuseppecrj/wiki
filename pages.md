@@ -61,6 +61,10 @@ How this entity shows up across sources.
 ## History
 - YYYY-MM-DD: [what changed and why, with source link]
 
+## Decisions
+(Optional, append-only. Added by /wiki save when the user makes decisions about this entity.)
+- YYYY-MM-DD: [what was decided, alternatives considered, why]
+
 ## Connections
 Related entities and concepts.
 ```
@@ -84,6 +88,10 @@ Relevance to the wiki.
 
 ## Sources
 - [[source-slug|Source Title]] — what the source adds
+
+## Decisions
+(Optional, append-only. Added by /wiki save when the user makes decisions about this concept.)
+- YYYY-MM-DD: [what was decided, alternatives considered, why]
 
 ## Related
 Related concepts and entities.
