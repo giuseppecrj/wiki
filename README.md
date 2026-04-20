@@ -4,16 +4,10 @@ An LLM-maintained personal knowledge wiki. Install it as a Claude Code skill, po
 
 ## Install
 
-**Claude Code:**
-
-```
-claude skill install pkts.run/wiki
-```
-
 **pkts:**
 
 ```
-pkts install pkts.run/wiki
+npx @pkts/cli install pkts.run/wiki
 ```
 
 Both install the skill to `~/.claude/skills/wiki/`. Verify with:
@@ -33,6 +27,7 @@ Open your vault (or any empty directory) in Claude Code and run:
 ```
 
 The init flow will:
+
 1. Create the directory scaffold (`raw/`, `wiki/`, etc.)
 2. Interview you — what the wiki covers, who you are, your topic areas, your preferred writing voice
 3. Generate `CLAUDE.md`, `SOUL.md`, `CRITICAL_FACTS.md`, `index.md`, `log.md`, and topic hub pages
@@ -53,19 +48,19 @@ Every ingest rewrites existing pages to integrate new knowledge — the wiki get
 
 ## Commands
 
-| Command | What it does |
-| ------- | ------------ |
-| `/wiki ingest` | Scan `raw/` for new files, process them all |
-| `/wiki ingest [url]` | Fetch and process a specific URL |
-| `/wiki query [question]` | Answer a question from the wiki with citations |
-| `/wiki health` | Audit: broken links, contradictions, orphans, concept gaps |
-| `/wiki synthesize` | Surface unnamed patterns across recent sources |
-| `/wiki autoresearch [question]` | Deep research via parallel-exploration subagents |
-| `/wiki challenge [idea]` | Red-team an idea against wiki history |
-| `/wiki daily` | Create or update today's daily note |
-| `/wiki save` | Save conversation insights to the wiki |
-| `/wiki reconcile [topic]` | Resolve contradictions between sources |
-| `/wiki init` | Bootstrap a new wiki from scratch |
+| Command                         | What it does                                               |
+| ------------------------------- | ---------------------------------------------------------- |
+| `/wiki ingest`                  | Scan `raw/` for new files, process them all                |
+| `/wiki ingest [url]`            | Fetch and process a specific URL                           |
+| `/wiki query [question]`        | Answer a question from the wiki with citations             |
+| `/wiki health`                  | Audit: broken links, contradictions, orphans, concept gaps |
+| `/wiki synthesize`              | Surface unnamed patterns across recent sources             |
+| `/wiki autoresearch [question]` | Deep research via parallel-exploration subagents           |
+| `/wiki challenge [idea]`        | Red-team an idea against wiki history                      |
+| `/wiki daily`                   | Create or update today's daily note                        |
+| `/wiki save`                    | Save conversation insights to the wiki                     |
+| `/wiki reconcile [topic]`       | Resolve contradictions between sources                     |
+| `/wiki init`                    | Bootstrap a new wiki from scratch                          |
 
 ## Architecture
 
@@ -77,12 +72,12 @@ Every ingest rewrites existing pages to integrate new knowledge — the wiki get
 
 ### Four page types
 
-| Type | Location | What it holds |
-| ---- | -------- | ------------- |
-| Source | `wiki/sources/` | One page per ingested source — articles, tweets, PDFs, bookmarks |
-| Entity | `wiki/entities/` | People, companies, products, projects |
-| Concept | `wiki/concepts/` | Ideas, frameworks, themes, patterns |
-| Topic | `wiki/topics/` | Hub pages organizing entities, concepts, and sources by domain |
+| Type    | Location         | What it holds                                                    |
+| ------- | ---------------- | ---------------------------------------------------------------- |
+| Source  | `wiki/sources/`  | One page per ingested source — articles, tweets, PDFs, bookmarks |
+| Entity  | `wiki/entities/` | People, companies, products, projects                            |
+| Concept | `wiki/concepts/` | Ideas, frameworks, themes, patterns                              |
+| Topic   | `wiki/topics/`   | Hub pages organizing entities, concepts, and sources by domain   |
 
 Plus daily notes at `wiki/daily/YYYY-MM-DD.md`.
 
@@ -158,6 +153,7 @@ Companion skills can also read from the wiki (query `index.md`, read pages) with
 ### Integrations
 
 The skill gracefully uses optional tools when available:
+
 - **Google Calendar** — daily notes pull today's events
 - **YouTube tools** — ingest extracts metadata and subtitles
 - **Transcription tools** — ingest transcribes audio sources
