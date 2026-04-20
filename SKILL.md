@@ -1,6 +1,17 @@
 ---
 name: wiki
+version: 0.1.0
 description: "LLM-maintained personal knowledge wiki for Obsidian and markdown vaults. Ingest sources, query knowledge, detect cross-source patterns, audit health, create daily notes, and build a compounding second brain. Install via Claude Code or pkts."
+license: MIT
+compatibility: |
+  Runs in any Agent Skills-compatible runtime (Claude Code, Codex, Cursor, Gemini).
+  Operates on a local markdown directory; wikilinks render natively in Obsidian.
+  Optional integrations used when available: URL fetching, YouTube metadata/subtitles, audio transcription, Google Calendar.
+metadata:
+  category: knowledge-management
+  tags: [wiki, obsidian, markdown, second-brain, notes, research, knowledge-base]
+  author: pkts.run
+  homepage: https://pkts.run/wiki
 ---
 
 # Wiki

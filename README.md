@@ -170,6 +170,32 @@ If a tool isn't available, the skill skips that step silently. No configuration 
 - [Claude Code](https://claude.ai/code) (any version with skill support)
 - An Obsidian vault or any directory where you want markdown files. The skill uses `[[wikilinks]]` for cross-referencing, which Obsidian resolves natively. Other markdown editors that support wikilinks will also work; editors without wikilink support will show the raw syntax but the wiki remains fully functional.
 
+## Publishing
+
+The skill is packaged and distributed as an [OCI artifact](https://github.com/ThomasVitale/agents-skills-oci-artifacts-spec) via [`skills-oci`](https://github.com/salaboy/skills-oci) (aliased as `pkts` in our docs). `SKILL.md` carries the config schema fields (`version`, `license`, `compatibility`, `metadata`) that `skills-oci` reads at push time.
+
+Install the publisher:
+
+```bash
+brew install salaboy/tap/skills-oci
+```
+
+Authenticate with your registry (example: GitHub Container Registry):
+
+```bash
+echo $GITHUB_TOKEN | docker login ghcr.io -u YOUR_GITHUB_USERNAME --password-stdin
+```
+
+Then run the bundled publish script — it stages the skill in a clean temp directory (dropping `.git/`, `.github/`, `.DS_Store`, and `publish.sh` itself) and calls `skills-oci push`:
+
+```bash
+./publish.sh ghcr.io/pkts-run/skills/wiki:0.1.0
+```
+
+The tag must match the `version` field in `SKILL.md` frontmatter — `skills-oci` overrides the embedded config version with the OCI tag at push time. Bump `version` in `SKILL.md`, re-run `./publish.sh <ref>:<new-tag>` for each release, and follow [semver](https://semver.org/).
+
+Why the staging step: `skills-oci` walks the skill path with no ignore rules, so pushing directly from the repo root would pack `.git/` into the artifact. `publish.sh` sidesteps that.
+
 ## License
 
 MIT
